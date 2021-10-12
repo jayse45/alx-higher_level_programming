@@ -1,1 +1,1 @@
-Inheritance of classes in python.
+*0x0A. Python - Inheritance*
