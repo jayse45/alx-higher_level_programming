@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Function that creates a class MyList that inherits from list"""
+
 class MyList(list):
     """ Class that inherits the attributes references of class list
     Args:
