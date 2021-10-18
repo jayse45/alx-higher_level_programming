@@ -1,31 +1,32 @@
 #!/usr/bin/python3
-"""Creating base class"""
+""" Module that contains class Base """
 import json
 import csv
 import os.path
 
 
 class Base:
-    """Setting attributes for base class"""
+    """ Class Base """
     __nb_objects = 0
 
-    def __init__(self, id = None):
+    def __init__(self, id=None):
+        """ Initializes instances """
         if id is not None:
             self.id = id
         else:
-            Base.__nb_objects ++
+            Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """List to JSON string"""
-        if list_dictionaries is None of list_dictionaries == "[]":
+        """ List to JSON string """
+        if list_dictionaries is None or list_dictionaries == "[]":
             return "[]"
-        return json.dumps(lsit_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Save object in a file"""
+        """ Save object in a file """
         filename = "{}.json".format(cls.__name__)
         list_dic = []
 
@@ -39,7 +40,7 @@ class Base:
 
         with open(filename, 'w') as f:
             f.write(lists)
-            
+
     @staticmethod
     def from_json_string(json_string):
         """ JSON string to dictionary """
